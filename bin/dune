@@ -1,0 +1,26 @@
+(executable
+ (public_name music)
+ (name music)
+ (libraries aau_spo_exercises unix)
+ (flags
+  (:standard -w -32-37)))
+
+(executable
+ (public_name monte_carlo)
+ (name monte_carlo)
+ (libraries aau_spo_exercises))
+
+(executable
+ (public_name cardioid)
+ (name cardioid)
+ (libraries aau_spo_exercises graphics))
+
+(executable
+ (public_name mandelbrot)
+ (name mandelbrot)
+ (libraries aau_spo_exercises graphics))
+
+(executable
+ (public_name sieve)
+ (name sieve)
+ (libraries aau_spo_exercises))
