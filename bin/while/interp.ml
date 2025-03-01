@@ -46,7 +46,7 @@ let rec interp_expr ctx = function
   | Ecst c -> interp_const c
   | Eunop (op, e1) -> interp_unop ctx op e1
   | Ebinop (op, e1, e2) -> interp_binop ctx op e1 e2
-  | Eident { id } -> ( try Hashtbl.find ctx id with _ -> error "not found")
+  | Eident { id; _ } -> ( try Hashtbl.find ctx id with _ -> error "not found")
 
 (* Interpreting constants. *)
 and interp_const = function
@@ -141,7 +141,7 @@ let rec stmt ctx = function
       match interp_expr ctx e with
       | Vbool b1 -> if b1 then stmt ctx s1 else stmt ctx s2
       | _ -> error "wrong type : bool expected")
-  | Sassign ({ id }, e1) -> Hashtbl.replace ctx id (interp_expr ctx e1)
+  | Sassign ({ id; _ }, e1) -> Hashtbl.replace ctx id (interp_expr ctx e1)
   | Sblock bl -> block ctx bl
   | Sprint el -> print_values (List.map (fun e -> interp_expr ctx e) el)
   | Swhile (e, s) -> (

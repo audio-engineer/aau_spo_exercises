@@ -2,7 +2,6 @@
 
 open Format
 open Lexing
-open Parser
 
 let usage = "usage: while-lang [options] file.wh"
 let parse_only = ref false

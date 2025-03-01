@@ -6,6 +6,4 @@
 
 (executable
  (name while)
- (public_name while)
- (promote (until-clean))
- (flags ()))
+ (public_name while))
