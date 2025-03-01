@@ -1,4 +1,3 @@
-
 (* Lexical analyzer for Mini-Python *)
 
 {
@@ -99,7 +98,6 @@ and string = parse
       { raise (Lexing_error "unterminated string") }
 
 {
-
   let next_token =
     let tokens = Queue.create () in (* next tokens to emit *)
     fun lb ->

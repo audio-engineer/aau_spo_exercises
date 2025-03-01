@@ -1,4 +1,3 @@
-
 /* Parser for Mini-Python */
 
 %{
@@ -106,5 +105,3 @@ simple_stmt:
 ident:
   id = IDENT { { loc = ($startpos, $endpos); id } }
 ;
-
-
